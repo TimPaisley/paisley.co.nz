@@ -1,7 +1,6 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import Image from "next/image";
-import me from "../public/me.jpg";
+import ProfileImage from "../components/ProfileImage";
 
 const Home: NextPage = () => {
   return (
@@ -14,12 +13,7 @@ const Home: NextPage = () => {
         ></link>
       </Head>
 
-      <Image
-        className="w-20 h-20 object-cover object-top rounded-full mb-12 border-2 border-blue-500"
-        src={me}
-        alt="A picture of me (Tim Paisley)"
-        placeholder="blur"
-      />
+      <ProfileImage />
 
       <a
         className="underline mb-4 hover:text-blue-700"
