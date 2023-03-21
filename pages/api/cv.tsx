@@ -10,6 +10,13 @@ const subheading = chalk.grey;
 const italic = chalk.italic;
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
+  const agent = req.headers["user-agent"];
+  const isCurl = agent?.includes("curl");
+
+  if (!isCurl) {
+    res.redirect("/");
+  }
+
   const response = chalk.reset(
     title("\nTIM PAISLEY\n"),
     "\n",
